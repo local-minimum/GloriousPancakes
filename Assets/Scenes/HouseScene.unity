@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &19852988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19852990}
+  - component: {fileID: 19852989}
+  m_Layer: 0
+  m_Name: Narrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &19852989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19852988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyBox: {fileID: 887818391}
+  storyBeats:
+  - name: Intro
+    delayBefore: 2
+    speaker: 
+    message: It was but a few days until the great harvest feast
+  - name: The plan
+    delayBefore: 0
+    speaker: Carol
+    message: What should we do for the feast?
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+--- !u!4 &19852990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19852988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.1989746, y: -5.119999, z: 2.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88126288
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +854,7 @@ GameObject:
   - component: {fileID: 859036780}
   - component: {fileID: 859036779}
   - component: {fileID: 859036778}
+  - component: {fileID: 859036782}
   m_Layer: 0
   m_Name: Person C
   m_TagString: Untagged
@@ -879,6 +941,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &859036782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859036777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Alex
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &887818386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1081,7 @@ GameObject:
   - component: {fileID: 958406342}
   - component: {fileID: 958406341}
   - component: {fileID: 958406340}
+  - component: {fileID: 958406344}
   m_Layer: 0
   m_Name: Person A
   m_TagString: Untagged
@@ -1090,6 +1168,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &958406344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958406339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Jane
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1490,7 @@ GameObject:
   - component: {fileID: 1103163738}
   - component: {fileID: 1103163737}
   - component: {fileID: 1103163736}
+  - component: {fileID: 1103163740}
   m_Layer: 0
   m_Name: Person F
   m_TagString: Untagged
@@ -1483,6 +1577,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1103163740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103163735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Lucinda
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1324956810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1900,7 @@ GameObject:
   - component: {fileID: 1513488162}
   - component: {fileID: 1513488161}
   - component: {fileID: 1513488160}
+  - component: {fileID: 1513488164}
   m_Layer: 0
   m_Name: Person E
   m_TagString: Untagged
@@ -1877,6 +1987,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513488164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513488159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Carol
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1516023156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2224,7 @@ GameObject:
   - component: {fileID: 1675966046}
   - component: {fileID: 1675966045}
   - component: {fileID: 1675966044}
+  - component: {fileID: 1675966048}
   m_Layer: 0
   m_Name: Person D
   m_TagString: Untagged
@@ -2185,6 +2311,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1675966048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675966043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Kim
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1747619210
 GameObject:
   m_ObjectHideFlags: 0
@@ -7180,6 +7321,7 @@ GameObject:
   - component: {fileID: 1975507220}
   - component: {fileID: 1975507219}
   - component: {fileID: 1975507218}
+  - component: {fileID: 1975507222}
   m_Layer: 0
   m_Name: Person B
   m_TagString: Untagged
@@ -7266,6 +7408,21 @@ Transform:
   m_Father: {fileID: 523709426}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1975507222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975507217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc5fd3c5f3a5c429943028128aaf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeakerName: Sam
+  positionChangeFrequency: 0.7
+  moveMagnitude: {x: 0, y: 0.1, z: 0}
 --- !u!1 &2021880999
 GameObject:
   m_ObjectHideFlags: 0
