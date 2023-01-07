@@ -162,6 +162,46 @@ MonoBehaviour:
     delayBefore: 0
     speaker: Carol
     message: What should we do for the feast?
+  - name: Pancakes
+    delayBefore: 0
+    speaker: Jane
+    message: PANCAKES!!!
+  - name: Pancakes 2
+    delayBefore: 0.2
+    speaker: Sam
+    message: PANCAKES!!!
+  - name: Pancakes 2
+    delayBefore: 0.2
+    speaker: Alex
+    message: Pancakes
+  - name: Pancakes 3
+    delayBefore: 0.5
+    speaker: Kim
+    message: Why does it always have to be pancakes?
+  - name: Decision
+    delayBefore: 0.5
+    speaker: Carol
+    message: Because pancakes are the best!
+  - name: Tasking
+    delayBefore: 0
+    speaker: Carol
+    message: Jane, you know the deal.
+  - name: Refusing
+    delayBefore: 0
+    speaker: Jane
+    message: But I don't wanna
+  - name: Tradition
+    delayBefore: 0
+    speaker: Carol
+    message: Youngest does the harvest
+  - name: Scared
+    delayBefore: 0
+    speaker: Jane
+    message: I'm scared
+  - name: Decided
+    delayBefore: 0
+    speaker: Carol
+    message: Youngest. Does. The. Harvest.
   housePeople:
   - {fileID: 958406344}
   - {fileID: 1975507222}
@@ -856,7 +896,7 @@ GameObject:
   - component: {fileID: 859036778}
   - component: {fileID: 859036782}
   m_Layer: 0
-  m_Name: Person C
+  m_Name: Alex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,8 +994,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeakerName: Alex
-  positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  positionChangeFrequency: 0.4
+  moveMagnitude: {x: -0.05, y: 0.2, z: 0}
 --- !u!1 &887818386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1050,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ccbce235aba4b954993d999da1d63297, type: 2}
+  - {fileID: 2100000, guid: 7f051652e5cb6434e97254702f5f5a18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1083,7 +1123,7 @@ GameObject:
   - component: {fileID: 958406340}
   - component: {fileID: 958406344}
   m_Layer: 0
-  m_Name: Person A
+  m_Name: Jane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,8 +1221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeakerName: Jane
-  positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  positionChangeFrequency: 0.3
+  moveMagnitude: {x: 0, y: 0.3, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1532,7 @@ GameObject:
   - component: {fileID: 1103163736}
   - component: {fileID: 1103163740}
   m_Layer: 0
-  m_Name: Person F
+  m_Name: Lucinda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1590,8 +1630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeakerName: Lucinda
-  positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  positionChangeFrequency: 0.45
+  moveMagnitude: {x: 0.1, y: 0.2, z: 0}
 --- !u!1 &1324956810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1942,7 @@ GameObject:
   - component: {fileID: 1513488160}
   - component: {fileID: 1513488164}
   m_Layer: 0
-  m_Name: Person E
+  m_Name: Carol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,7 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeakerName: Carol
   positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  moveMagnitude: {x: 0, y: 0.15, z: 0}
 --- !u!1 &1516023156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2266,7 @@ GameObject:
   - component: {fileID: 1675966044}
   - component: {fileID: 1675966048}
   m_Layer: 0
-  m_Name: Person D
+  m_Name: Kim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2324,8 +2364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeakerName: Kim
-  positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  positionChangeFrequency: 0.4
+  moveMagnitude: {x: 0, y: 0.15, z: 0}
 --- !u!1 &1747619210
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,7 +7363,7 @@ GameObject:
   - component: {fileID: 1975507218}
   - component: {fileID: 1975507222}
   m_Layer: 0
-  m_Name: Person B
+  m_Name: Sam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7421,8 +7461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeakerName: Sam
-  positionChangeFrequency: 0.7
-  moveMagnitude: {x: 0, y: 0.1, z: 0}
+  positionChangeFrequency: 0.4
+  moveMagnitude: {x: 0, y: 0.2, z: 0}
 --- !u!1 &2021880999
 GameObject:
   m_ObjectHideFlags: 0
