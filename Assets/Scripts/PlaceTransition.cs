@@ -15,10 +15,26 @@ public class PlaceTransition : MonoBehaviour
     [SerializeField]
     PlaceTarget[] LeadsTo;
 
+    Transform player;
+    PlaceTarget target;
+    PlaceTransition nextTarget;
+
+
     public void WalkTo(Transform player, PlaceTarget target) {
         Debug.Log($"Recieved player at {name}, target {target}");
         player.position = transform.position;
-        StartCoroutine(_DoWalk(player, target));
+        
+        // StartCoroutine(_DoWalk(player, target));
+
+        nextTarget = GetNext(target);
+        if (nextTarget == null)
+        {
+            // Load Fight Scene
+            return;
+        }
+
+        this.player = player;
+        this.target = target;
     }
 
     PlaceTransition GetNext(PlaceTarget target)
@@ -47,30 +63,30 @@ public class PlaceTransition : MonoBehaviour
 
     }
 
-    IEnumerator<WaitForSeconds> _DoWalk(Transform player, PlaceTarget target)
-    {
-        PlaceTransition nextTarget = GetNext(target);
-        if (nextTarget == null)
-        {
-            // TODO: Load next scene
-            yield break;
-        }
-        Vector3 startPosition = player.position;
-        float startTime = Time.timeSinceLevelLoad;
-        float progress = 0;
-        Debug.Log($"Starting walk from {name} to {nextTarget.name}");
-        while (progress < 1)
-        {
-            player.position = Vector3.Lerp(startPosition, nextTarget.transform.position, progress);
-            yield return new WaitForSeconds(0.02f);
-            progress = (Time.timeSinceLevelLoad - startTime) / nextTarget.walkTime;
-        }
-
-        nextTarget?.WalkTo(player, target);
-    }
-
     public bool TakesPlayerTo(PlaceTarget target)
     {
         return LeadsTo.Any(v => v == target);
+    }
+
+
+    float progress = 0;
+    float speedScale = 1f;
+
+    private void Update()
+    {
+        if (player == null) return;
+
+        // Going forward
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0)
+        {
+            progress += Time.deltaTime * speedScale / nextTarget.walkTime;
+            progress = Mathf.Clamp01(progress);
+            player.position = Vector3.Lerp(transform.position, nextTarget.transform.position, progress);
+            if (progress == 1)
+            {
+                nextTarget.WalkTo(player, target);
+                player = null;
+            }
+        }
     }
 }
