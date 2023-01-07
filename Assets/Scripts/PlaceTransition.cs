@@ -30,6 +30,7 @@ public class PlaceTransition : MonoBehaviour
         if (nextTarget == null)
         {
             // Load Fight Scene
+            Debug.Log($"I'm at {target}");
             return;
         }
 
