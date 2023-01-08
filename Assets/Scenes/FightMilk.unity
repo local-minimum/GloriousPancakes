@@ -278,6 +278,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec08d79cd06ca94b91234e8220736b2, type: 3}
+--- !u!1 &169084936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169084937}
+  m_Layer: 0
+  m_Name: MonsterWestEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169084937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169084936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.86, y: 1.88, z: 0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177806628
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177806629}
   m_Layer: 6
-  m_Name: LegPivot (1)
+  m_Name: BackLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303623161}
   m_LocalRotation: {x: 0, y: 0, z: 0.24522279, w: 0.96946675}
-  m_LocalPosition: {x: -1.7700002, y: -0.189, z: -0.49}
+  m_LocalPosition: {x: -1.77, y: -0.189, z: -0.49}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -456,7 +487,6 @@ GameObject:
   - component: {fileID: 652405703}
   - component: {fileID: 652405706}
   - component: {fileID: 652405705}
-  - component: {fileID: 652405704}
   - component: {fileID: 652405707}
   m_Layer: 6
   m_Name: Leg
@@ -480,20 +510,6 @@ Transform:
   m_Father: {fileID: 1953303390}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &652405704
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652405702}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &652405705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -555,7 +571,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36, y: 1, z: 6.1232336e-17}
+  m_Size: {x: 0.36, y: 1, z: 1}
   m_Center: {x: 0, y: 0.000000029802322, z: 0}
 --- !u!1001 &748247561
 PrefabInstance:
@@ -684,7 +700,6 @@ GameObject:
   - component: {fileID: 1114918635}
   - component: {fileID: 1114918638}
   - component: {fileID: 1114918637}
-  - component: {fileID: 1114918636}
   - component: {fileID: 1114918639}
   m_Layer: 6
   m_Name: Leg
@@ -708,20 +723,6 @@ Transform:
   m_Father: {fileID: 177806629}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1114918636
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114918634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1114918637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -783,7 +784,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.41, y: 1, z: 6.1232336e-17}
+  m_Size: {x: 0.41, y: 1, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.000000029802322, z: 0}
 --- !u!1 &1328031771
 GameObject:
@@ -794,6 +795,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328031772}
+  - component: {fileID: 1328031773}
+  - component: {fileID: 1328031774}
   m_Layer: 6
   m_Name: Monster
   m_TagString: Untagged
@@ -820,6 +823,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1328031773
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328031771}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f12b284d7154d674fbbe2738f3d1f778, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1328031774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328031771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c40e3aac885b03488566d087611c1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  westRushStart: {fileID: 1393265356}
+  westRushEnd: {fileID: 169084937}
+  BeforeRushDelayMin: 2
+  BeforeRushDelayMax: 6
+  HeadTiltWait: 0.5
+  RushDuration: 1
+  CrashTimeMin: 3
+  CrashTimeMax: 5
+--- !u!1 &1393265355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393265356}
+  m_Layer: 0
+  m_Name: MonsterWestStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393265356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393265355}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.39, y: 1.88, z: 0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1572968405
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +905,6 @@ GameObject:
   - component: {fileID: 1572968406}
   - component: {fileID: 1572968409}
   - component: {fileID: 1572968408}
-  - component: {fileID: 1572968407}
   - component: {fileID: 1572968410}
   m_Layer: 6
   m_Name: Body
@@ -856,20 +929,6 @@ Transform:
   m_Father: {fileID: 1328031772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1572968407
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572968405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1572968408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -931,7 +990,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.15, z: 6.1232336e-17}
+  m_Size: {x: 0.85, y: 0.15, z: 1}
   m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &1615874988
 GameObject:
@@ -944,7 +1003,6 @@ GameObject:
   - component: {fileID: 1615874989}
   - component: {fileID: 1615874992}
   - component: {fileID: 1615874991}
-  - component: {fileID: 1615874990}
   m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
@@ -967,20 +1025,6 @@ Transform:
   m_Father: {fileID: 303623162}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1615874990
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615874988}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1615874991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1196,7 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953303390}
   m_Layer: 6
-  m_Name: LegPivot
+  m_Name: FrontLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1210,7 +1254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953303389}
   m_LocalRotation: {x: 0, y: 0, z: 0.16074255, w: 0.98699635}
-  m_LocalPosition: {x: -0.089999914, y: -0.278, z: -0.02}
+  m_LocalPosition: {x: -0.08999991, y: -0.278, z: -0.02}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
