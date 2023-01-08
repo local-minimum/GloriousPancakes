@@ -10,12 +10,33 @@ public class HarvestSpot : MonoBehaviour
     [SerializeField]
     bool autoEnableHarvest;
 
+    [SerializeField, Range(1, 5)]
+    int harvestIterations = 1;
+
     [SerializeField]
     GameObject[] harvestables;
 
+    [SerializeField]
     HintUI Hint;
 
-    public bool MayHarvest { get; set; }
+    bool _MayHarvest = false;
+    public bool MayHarvest { 
+        get { return _MayHarvest; }
+        set {
+            if (value) Debug.Log($"Remaining {harvestIterations}");
+            if (value && harvestIterations > 0)
+            {
+                _MayHarvest = true;
+                harvestIterations--;
+                harvested = false;
+                EnableHarvestables();
+            } else
+            {
+                DisableHarvestables();
+                _MayHarvest = false;
+            }
+        }
+    }
 
     FightPlayer player;
 
@@ -24,7 +45,7 @@ public class HarvestSpot : MonoBehaviour
     
     void Start()
     {
-        Hint = GetComponentInChildren<HintUI>();
+        if (Hint == null) Hint = GetComponentInChildren<HintUI>();
         Hint.Hide();
 
         if (autoEnableHarvest)
@@ -87,8 +108,9 @@ public class HarvestSpot : MonoBehaviour
 
                     FindObjectOfType<Inventory>().AddToInventory();
 
-                    RemoveHarvest();
+                    DisableHarvestables();
                     harvested = true;
+                    MayHarvest = false;
                 }
                 else
                 {
@@ -97,8 +119,7 @@ public class HarvestSpot : MonoBehaviour
             } else
             {
                 Hint.Hide();
-                harvesting = false;
-
+                harvesting = false;                
             }
         } else
         {
@@ -107,11 +128,19 @@ public class HarvestSpot : MonoBehaviour
         }
     }
 
-    void RemoveHarvest()
+    void DisableHarvestables()
     {
         for (int i = 0; i<harvestables.Length; i++)
         {
             harvestables[i].SetActive(false);
+        }
+    }
+
+    void EnableHarvestables()
+    {
+        for (int i = 0; i < harvestables.Length; i++)
+        {
+            harvestables[i].SetActive(true);
         }
     }
 }

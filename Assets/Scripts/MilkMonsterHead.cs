@@ -26,9 +26,9 @@ public class MilkMonsterHead : MonoBehaviour
         player = FindObjectOfType<FightPlayer>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform == player.transform) { 
+    private void OnCollisionEnter(Collision collision)
+    {        
+        if (collision.transform == player.transform) { 
             if (Attacking)
             {
                 player.Hurt(Vector3.up * tossAmount, tossHurt);

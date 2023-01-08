@@ -32,4 +32,8 @@ public class HintUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void Update()
+    {        
+    }
 }

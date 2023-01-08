@@ -5,6 +5,12 @@ using UnityEngine;
 public class MilkMonster : MonoBehaviour
 {
     [SerializeField]
+    Transform monsterFlipRoot;
+
+    [SerializeField]
+    Transform milkUI;
+
+    [SerializeField]
     Transform westRushStart;
 
     [SerializeField]
@@ -17,6 +23,8 @@ public class MilkMonster : MonoBehaviour
     Transform eastRushEnd;
 
     MilkMonsterHead head;
+
+    HarvestSpot harvest;
 
     bool rushingWest = true;
 
@@ -56,24 +64,32 @@ public class MilkMonster : MonoBehaviour
         }
     }
 
+    Vector3 milkUIOffset;
+
     void Start()
     {
         head = GetComponentInChildren<MilkMonsterHead>();
         anim = GetComponentInChildren<Animator>();
+        harvest = GetComponentInChildren<HarvestSpot>();
 
+        harvest.MayHarvest = false;
         head.FacingWest = rushingWest;
+
+        milkUIOffset = milkUI.localPosition;
     }
 
     void SetRushStart()
     {
         if (rushingWest)
         {
-            transform.localScale = Vector3.one;
+            milkUI.localPosition = milkUIOffset;
+            monsterFlipRoot.localScale = Vector3.one;
             transform.position = westRushStart.position;
             StartCoroutine(DelayRush(westRushStart.position, westRushEnd.position, westRushEnd.GetComponentInChildren<AttackEnabler>()));
         } else 
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            milkUI.localPosition = new Vector3(-milkUIOffset.x, milkUIOffset.y, milkUIOffset.z);
+            monsterFlipRoot.localScale = new Vector3(-1, 1, 1);
             transform.position = eastRushStart.position;
             StartCoroutine(DelayRush(eastRushStart.position, eastRushEnd.position, eastRushEnd.GetComponentInChildren<AttackEnabler>()));
         }
@@ -105,6 +121,11 @@ public class MilkMonster : MonoBehaviour
         transform.position = to;
         anim.SetTrigger("Crash");
         head.Attacking = false;
+        
+        if (!harvest.MayHarvest)
+        {
+            harvest.MayHarvest = true;
+        }
 
         yield return new WaitForSeconds(CrashTime);
         anim.SetTrigger("Ready");
