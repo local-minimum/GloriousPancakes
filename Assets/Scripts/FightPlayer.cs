@@ -247,6 +247,14 @@ public class FightPlayer : MonoBehaviour
 
     float health = 1;
     
+    public float Health
+    {
+        get
+        {
+            return health;
+        }
+    }
+
     void IgnoreMonsterColllisions(bool ignore)
     {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Monster"), ignore);
@@ -261,8 +269,9 @@ public class FightPlayer : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         rb.AddForce(force, ForceMode.Impulse);
-        
+
         health -= damage;
+        Debug.Log($"Took {damage} / health {health}");
 
         if (health <= 0) {
             IgnoreMonsterColllisions(false);
