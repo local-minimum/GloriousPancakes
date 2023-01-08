@@ -10,14 +10,23 @@ public class HarvestSpot : MonoBehaviour
     [SerializeField]
     bool autoEnableHarvest;
 
+    [SerializeField]
+    GameObject[] harvestables;
+
+    HintUI Hint;
+
     public bool MayHarvest { get; set; }
 
     FightPlayer player;
 
     bool hasPlayer = false;
+    bool harvested = false;
     
     void Start()
     {
+        Hint = GetComponentInChildren<HintUI>();
+        Hint.Hide();
+
         if (autoEnableHarvest)
         {
             MayHarvest = true;
@@ -45,20 +54,64 @@ public class HarvestSpot : MonoBehaviour
     float harvetStart = 0;
     bool harvesting = false;
 
+    float harvestProgress
+    {
+        get
+        {
+            if (!harvesting) return 0;
+
+            return Mathf.Clamp01((Time.timeSinceLevelLoad - harvetStart) / harvestTime);
+        }
+    }
+
     private void Update()
     {
-        if (hasPlayer && player.IsAlive && player.IsStill && Input.GetButtonDown("Harvest") && !harvesting)
+        if (harvested) return;
+        if (hasPlayer && player.IsAlive && player.IsStill)
         {
-            harvetStart = Time.timeSinceLevelLoad;
-            harvesting = true;
-        } else if (harvesting && Input.GetButton("Harvest"))
-        {
-            // Check if done
-            // If so report a harvest
-            // Else show progress
+            if (!harvesting)
+            {
+                if (Input.GetButtonDown("Harvest"))
+                {
+                    harvetStart = Time.timeSinceLevelLoad;
+                    harvesting = true;
+                }
+                Hint.SetText("Harvest");
+            } else if (harvesting && Input.GetButton("Harvest"))
+            {
+                var progress = harvestProgress;
+                if (progress == 1)
+                {
+                    harvesting = false;
+                    Hint.Hide();
+
+                    FindObjectOfType<Inventory>().AddToInventory();
+
+                    RemoveHarvest();
+                    harvested = true;
+                }
+                else
+                {
+                    Hint.SetProgress(progress);
+                }
+            } else
+            {
+                Hint.Hide();
+                harvesting = false;
+
+            }
         } else
         {
+            Hint.Hide();
             harvesting = false;
+        }
+    }
+
+    void RemoveHarvest()
+    {
+        for (int i = 0; i<harvestables.Length; i++)
+        {
+            harvestables[i].SetActive(false);
         }
     }
 }
