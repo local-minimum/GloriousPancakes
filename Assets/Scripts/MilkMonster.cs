@@ -10,6 +10,14 @@ public class MilkMonster : MonoBehaviour
     [SerializeField]
     Transform westRushEnd;
 
+    [SerializeField]
+    Transform eastRushStart;
+
+    [SerializeField]
+    Transform eastRushEnd;
+
+    MilkMonsterHead head;
+
     bool rushingWest = true;
 
     Animator anim;
@@ -50,25 +58,41 @@ public class MilkMonster : MonoBehaviour
 
     void Start()
     {
+        head = GetComponentInChildren<MilkMonsterHead>();
         anim = GetComponentInChildren<Animator>();
+
+        head.FacingWest = rushingWest;
     }
 
     void SetRushStart()
     {
         if (rushingWest)
         {
+            transform.localScale = Vector3.one;
             transform.position = westRushStart.position;
-            StartCoroutine(DelayRush(westRushStart.position, westRushEnd.position));
+            StartCoroutine(DelayRush(westRushStart.position, westRushEnd.position, westRushEnd.GetComponentInChildren<AttackEnabler>()));
+        } else 
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            transform.position = eastRushStart.position;
+            StartCoroutine(DelayRush(eastRushStart.position, eastRushEnd.position, eastRushEnd.GetComponentInChildren<AttackEnabler>()));
         }
     }
 
-    IEnumerator<WaitForSeconds> DelayRush(Vector3 from, Vector3 to)
+    IEnumerator<WaitForSeconds> DelayRush(Vector3 from, Vector3 to, AttackEnabler enabler)
     {
         sequencing = true;
-        yield return new WaitForSeconds(BeforeRushDelay);        
+        yield return new WaitForSeconds(BeforeRushDelay);
+        
+        while (!enabler.hasPlayer)
+        {
+            yield return new WaitForSeconds(0.02f);
+        }
+
         anim.SetTrigger("Attack");
         yield return new WaitForSeconds(HeadTiltWait);
 
+        head.Attacking = true;
         float startTime = Time.timeSinceLevelLoad;
         float progress = 0;
         while (progress < 1)
@@ -80,11 +104,14 @@ public class MilkMonster : MonoBehaviour
 
         transform.position = to;
         anim.SetTrigger("Crash");
+        head.Attacking = false;
 
         yield return new WaitForSeconds(CrashTime);
         anim.SetTrigger("Ready");
 
-        sequencing = false;
+        rushingWest = !rushingWest;
+        sequencing = false; 
+        head.FacingWest = rushingWest;
     }
 
     private void Update()

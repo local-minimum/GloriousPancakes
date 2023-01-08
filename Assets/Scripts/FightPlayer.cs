@@ -8,6 +8,7 @@ public class FightPlayer : MonoBehaviour
     Vector3 startScale;
 
     bool alive = true;
+    bool disablePlayer = false;
 
     private void Start()
     {
@@ -96,7 +97,7 @@ public class FightPlayer : MonoBehaviour
     }
     private void Update()
     {
-        if (!alive) return;
+        if (!alive || disablePlayer) return;
 
         LogStateChange();
 
@@ -242,5 +243,47 @@ public class FightPlayer : MonoBehaviour
         {
             return alive;
         }
+    }
+
+    float health = 1;
+    
+    void IgnoreMonsterColllisions(bool ignore)
+    {
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Monster"), ignore);
+    }
+
+    public void Hurt(Vector3 force, float damage)
+    {
+        if (disablePlayer) return;
+
+        disablePlayer = true;
+        IgnoreMonsterColllisions(true);
+
+        rb.velocity = Vector3.zero;
+        rb.AddForce(force, ForceMode.Impulse);
+        
+        health -= damage;
+
+        if (health <= 0) {
+            IgnoreMonsterColllisions(false);
+            alive = false;
+            Debug.Log("Dead");
+        } else
+        {
+            StartCoroutine(ReenableColliders(force));
+        }
+    }
+
+    IEnumerator<WaitForSeconds> ReenableColliders(Vector3 force)
+    {
+        for (float t = 0; t<0.5f; t+=0.02f)
+        {
+            rb.AddForce(force, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.02f);
+            force *= 0.5f;
+        }
+        
+        IgnoreMonsterColllisions(false);
+        disablePlayer = false;
     }
 }

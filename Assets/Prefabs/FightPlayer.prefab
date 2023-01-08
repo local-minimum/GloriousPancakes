@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 687920456785948078}
   - component: {fileID: 687920456785948079}
   - component: {fileID: 687920456785948073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FightPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5220544, y: 0.841772, z: 6.1232336e-17}
+  m_Size: {x: 0.5220544, y: 0.841772, z: 1}
   m_Center: {x: 0.042533666, y: -0.06469634, z: 0}
 --- !u!54 &687920456785948079
 Rigidbody:
