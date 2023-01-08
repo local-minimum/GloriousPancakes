@@ -8,7 +8,7 @@ public class HintUI : MonoBehaviour
     TMPro.TextMeshProUGUI Text;
     Image Progress;
 
-    void Start()
+    void Awake()
     {
         Text = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         Progress = GetComponentInChildren<Image>();

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Linq;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlaceTransition : MonoBehaviour
 {
@@ -19,18 +19,31 @@ public class PlaceTransition : MonoBehaviour
     PlaceTarget target;
     PlaceTransition nextTarget;
 
+    void LoadScene()
+    {
+        switch (GameProgression.instance.Phase)
+        {
+            case GameProgression.GamePhase.FirstWheat:
+                SceneManager.LoadScene("FirstWheat");
+                return;
+            case GameProgression.GamePhase.Milk:
+                SceneManager.LoadScene("FightMilk");
+                return;
+            default:
+                Debug.LogWarning("I don't know what to do");
+                return;
+        }
+    }
 
     public void WalkTo(Transform player, PlaceTarget target) {
         Debug.Log($"Recieved player at {name}, target {target}");
         player.position = transform.position;
         
-        // StartCoroutine(_DoWalk(player, target));
-
         nextTarget = GetNext(target);
         if (nextTarget == null)
-        {
-            // Load Fight Scene
+        {            
             Debug.Log($"I'm at {target}");
+            LoadScene();
             return;
         }
 

@@ -1,9 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Narrator : MonoBehaviour
 {
+    [SerializeField]
+    GameProgression.GamePhase phase;
+
     [SerializeField]
     StoryBox storyBox;
 
@@ -13,16 +16,28 @@ public class Narrator : MonoBehaviour
     [SerializeField]
     HousePerson[] housePeople;
 
+    [SerializeField]
+    bool triggersNextPhase;
+
     int storyIndex = 0;
     bool showing = false;
 
     HousePerson currentSpeaker;
 
+    GameProgression progression;
 
     void Start()
     {
-        storyBox.Hide();
-        MakeStory();
+        progression = GameProgression.instance;
+        if (phase == progression.Phase && !progression.NewDeath)
+        {
+            Debug.Log($"Phase {progression.Phase}");
+            storyBox.Hide();
+            MakeStory();
+        } else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     bool MakeStory()
@@ -81,7 +96,8 @@ public class Narrator : MonoBehaviour
             storyIndex++;
             if (!MakeStory())
             {
-                // Load next sccene!
+                if (triggersNextPhase) progression.NextPhase();
+                SceneManager.LoadScene("WorldScene");
             }
         }
     }

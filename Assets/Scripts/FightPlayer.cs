@@ -270,13 +270,15 @@ public class FightPlayer : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.AddForce(force, ForceMode.Impulse);
 
-        health -= damage;
+        health = Mathf.Clamp01(health - damage);
         Debug.Log($"Took {damage} / health {health}");
 
         if (health <= 0) {
             IgnoreMonsterColllisions(false);
             alive = false;
-            Debug.Log("Dead");
+            var progress = GameProgression.instance;
+            progress.SetYoungestMemberHealth(0);
+            progress.NewDeath = true;
         } else
         {
             StartCoroutine(ReenableColliders(force));

@@ -13,8 +13,26 @@ public class WorldPlayer : MonoBehaviour
     [SerializeField]
     float waitBeforeWalk = 1f;
 
+    PlaceTransition.PlaceTarget ResolveTarget(GameProgression.GamePhase phase)
+    {
+        switch (phase)
+        {
+            case GameProgression.GamePhase.FirstWheat:
+                return PlaceTransition.PlaceTarget.Field;
+            case GameProgression.GamePhase.Milk:
+                return PlaceTransition.PlaceTarget.Pen;
+            default:
+                return target;
+
+        }
+    }
+
     private void Start()
-    {        
+    {
+        var progression = GameProgression.instance;
+        Debug.Log($"Phase {progression.Phase}");
+        target = ResolveTarget(progression.Phase);
+
         StartCoroutine(WaitWalk());
     }
 

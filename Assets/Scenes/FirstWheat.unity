@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 80396152}
   - component: {fileID: 80396151}
   - component: {fileID: 80396150}
-  - component: {fileID: 80396149}
   m_Layer: 0
   m_Name: Tree (8)
   m_TagString: Untagged
@@ -142,20 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &80396149
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80396148}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &80396150
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -221,6 +206,63 @@ Transform:
   m_Father: {fileID: 1899839343}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &118824217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.050211906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.55249
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.71850586
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202780, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_Name
+      value: GameProgression
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
 --- !u!1001 &151000283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,11 +390,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestTime: 2
   autoEnableHarvest: 0
+  harvestIterations: 1
   harvestables:
   - {fileID: 637740775}
   - {fileID: 985512212}
   - {fileID: 1580376484}
   - {fileID: 1938125847}
+  Hint: {fileID: 0}
 --- !u!1 &191753858
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +408,6 @@ GameObject:
   - component: {fileID: 191753862}
   - component: {fileID: 191753861}
   - component: {fileID: 191753860}
-  - component: {fileID: 191753859}
   m_Layer: 0
   m_Name: Wheat (2)
   m_TagString: Untagged
@@ -372,20 +415,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &191753859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191753858}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &191753860
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -462,7 +491,6 @@ GameObject:
   - component: {fileID: 236896893}
   - component: {fileID: 236896892}
   - component: {fileID: 236896891}
-  - component: {fileID: 236896890}
   m_Layer: 0
   m_Name: Tree (7)
   m_TagString: Untagged
@@ -470,20 +498,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &236896890
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236896889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &236896891
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -560,7 +574,6 @@ GameObject:
   - component: {fileID: 286820068}
   - component: {fileID: 286820067}
   - component: {fileID: 286820066}
-  - component: {fileID: 286820065}
   m_Layer: 0
   m_Name: Tree (1)
   m_TagString: Untagged
@@ -568,20 +581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &286820065
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286820064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &286820066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -658,7 +657,6 @@ GameObject:
   - component: {fileID: 329002643}
   - component: {fileID: 329002642}
   - component: {fileID: 329002641}
-  - component: {fileID: 329002640}
   m_Layer: 0
   m_Name: Hill (7)
   m_TagString: Untagged
@@ -666,20 +664,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &329002640
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329002639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &329002641
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -818,7 +802,6 @@ GameObject:
   - component: {fileID: 377723835}
   - component: {fileID: 377723834}
   - component: {fileID: 377723833}
-  - component: {fileID: 377723832}
   m_Layer: 0
   m_Name: Tree (11)
   m_TagString: Untagged
@@ -826,20 +809,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &377723832
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377723831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &377723833
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -916,7 +885,6 @@ GameObject:
   - component: {fileID: 472848543}
   - component: {fileID: 472848546}
   - component: {fileID: 472848545}
-  - component: {fileID: 472848544}
   m_Layer: 0
   m_Name: Wheat
   m_TagString: Untagged
@@ -939,20 +907,6 @@ Transform:
   m_Father: {fileID: 1539278011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 23.5, z: 0}
---- !u!64 &472848544
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472848542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &472848545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1014,7 +968,6 @@ GameObject:
   - component: {fileID: 546526825}
   - component: {fileID: 546526824}
   - component: {fileID: 546526823}
-  - component: {fileID: 546526822}
   m_Layer: 0
   m_Name: Hill (6)
   m_TagString: Untagged
@@ -1022,20 +975,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &546526822
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546526821}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &546526823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1112,7 +1051,6 @@ GameObject:
   - component: {fileID: 637740776}
   - component: {fileID: 637740779}
   - component: {fileID: 637740778}
-  - component: {fileID: 637740777}
   m_Layer: 0
   m_Name: Wheat
   m_TagString: Untagged
@@ -1135,20 +1073,6 @@ Transform:
   m_Father: {fileID: 183687695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &637740777
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637740775}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &637740778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1210,7 +1134,6 @@ GameObject:
   - component: {fileID: 676942858}
   - component: {fileID: 676942857}
   - component: {fileID: 676942856}
-  - component: {fileID: 676942855}
   m_Layer: 0
   m_Name: Hill (4)
   m_TagString: Untagged
@@ -1218,20 +1141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &676942855
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676942854}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &676942856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1308,7 +1217,6 @@ GameObject:
   - component: {fileID: 679517409}
   - component: {fileID: 679517408}
   - component: {fileID: 679517407}
-  - component: {fileID: 679517406}
   m_Layer: 0
   m_Name: Tree (12)
   m_TagString: Untagged
@@ -1316,20 +1224,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &679517406
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679517405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &679517407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1406,7 +1300,6 @@ GameObject:
   - component: {fileID: 679520465}
   - component: {fileID: 679520464}
   - component: {fileID: 679520463}
-  - component: {fileID: 679520462}
   m_Layer: 0
   m_Name: Tree (9)
   m_TagString: Untagged
@@ -1414,20 +1307,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &679520462
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679520461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &679520463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1504,7 +1383,6 @@ GameObject:
   - component: {fileID: 709697957}
   - component: {fileID: 709697956}
   - component: {fileID: 709697955}
-  - component: {fileID: 709697954}
   m_Layer: 0
   m_Name: Hill
   m_TagString: Untagged
@@ -1512,20 +1390,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &709697954
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709697953}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &709697955
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1647,7 +1511,6 @@ GameObject:
   - component: {fileID: 860593053}
   - component: {fileID: 860593052}
   - component: {fileID: 860593051}
-  - component: {fileID: 860593050}
   m_Layer: 0
   m_Name: Hill (5)
   m_TagString: Untagged
@@ -1655,20 +1518,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &860593050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860593049}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &860593051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1745,7 +1594,6 @@ GameObject:
   - component: {fileID: 875366670}
   - component: {fileID: 875366669}
   - component: {fileID: 875366668}
-  - component: {fileID: 875366667}
   m_Layer: 0
   m_Name: Tree (6)
   m_TagString: Untagged
@@ -1753,20 +1601,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &875366667
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875366666}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &875366668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1843,7 +1677,6 @@ GameObject:
   - component: {fileID: 916721223}
   - component: {fileID: 916721222}
   - component: {fileID: 916721221}
-  - component: {fileID: 916721220}
   m_Layer: 0
   m_Name: Tree (13)
   m_TagString: Untagged
@@ -1851,20 +1684,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &916721220
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916721219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &916721221
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1941,7 +1760,6 @@ GameObject:
   - component: {fileID: 959370876}
   - component: {fileID: 959370875}
   - component: {fileID: 959370874}
-  - component: {fileID: 959370873}
   m_Layer: 0
   m_Name: Wheat
   m_TagString: Untagged
@@ -1949,20 +1767,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &959370873
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959370872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &959370874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2039,7 +1843,6 @@ GameObject:
   - component: {fileID: 973924536}
   - component: {fileID: 973924535}
   - component: {fileID: 973924534}
-  - component: {fileID: 973924533}
   m_Layer: 0
   m_Name: Tree (3)
   m_TagString: Untagged
@@ -2047,20 +1850,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &973924533
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973924532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &973924534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2205,7 +1994,6 @@ GameObject:
   - component: {fileID: 985512213}
   - component: {fileID: 985512216}
   - component: {fileID: 985512215}
-  - component: {fileID: 985512214}
   m_Layer: 0
   m_Name: Wheat (1)
   m_TagString: Untagged
@@ -2228,20 +2016,6 @@ Transform:
   m_Father: {fileID: 183687695}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &985512214
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985512212}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &985512215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2303,7 +2077,6 @@ GameObject:
   - component: {fileID: 999477507}
   - component: {fileID: 999477510}
   - component: {fileID: 999477509}
-  - component: {fileID: 999477508}
   m_Layer: 0
   m_Name: Wheat (1)
   m_TagString: Untagged
@@ -2326,20 +2099,6 @@ Transform:
   m_Father: {fileID: 1539278011}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 23.5, z: 0}
---- !u!64 &999477508
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999477506}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &999477509
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2401,7 +2160,6 @@ GameObject:
   - component: {fileID: 1052802884}
   - component: {fileID: 1052802883}
   - component: {fileID: 1052802882}
-  - component: {fileID: 1052802881}
   m_Layer: 0
   m_Name: Tree (10)
   m_TagString: Untagged
@@ -2409,20 +2167,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1052802881
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052802880}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1052802882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2499,7 +2243,6 @@ GameObject:
   - component: {fileID: 1115994289}
   - component: {fileID: 1115994288}
   - component: {fileID: 1115994287}
-  - component: {fileID: 1115994286}
   m_Layer: 0
   m_Name: Wheat (3)
   m_TagString: Untagged
@@ -2507,20 +2250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1115994286
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115994285}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1115994287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2597,7 +2326,6 @@ GameObject:
   - component: {fileID: 1132998456}
   - component: {fileID: 1132998455}
   - component: {fileID: 1132998454}
-  - component: {fileID: 1132998453}
   m_Layer: 0
   m_Name: Wheat (1)
   m_TagString: Untagged
@@ -2605,20 +2333,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1132998453
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132998452}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1132998454
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2695,7 +2409,6 @@ GameObject:
   - component: {fileID: 1191578503}
   - component: {fileID: 1191578502}
   - component: {fileID: 1191578501}
-  - component: {fileID: 1191578500}
   m_Layer: 0
   m_Name: Tree (5)
   m_TagString: Untagged
@@ -2703,20 +2416,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1191578500
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191578499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1191578501
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2793,7 +2492,6 @@ GameObject:
   - component: {fileID: 1208056249}
   - component: {fileID: 1208056248}
   - component: {fileID: 1208056247}
-  - component: {fileID: 1208056246}
   m_Layer: 0
   m_Name: Hill (2)
   m_TagString: Untagged
@@ -2801,20 +2499,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1208056246
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208056245}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1208056247
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2891,7 +2575,6 @@ GameObject:
   - component: {fileID: 1230762528}
   - component: {fileID: 1230762531}
   - component: {fileID: 1230762530}
-  - component: {fileID: 1230762529}
   m_Layer: 0
   m_Name: Wheat (3)
   m_TagString: Untagged
@@ -2914,20 +2597,6 @@ Transform:
   m_Father: {fileID: 1539278011}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 23.5, z: 0}
---- !u!64 &1230762529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230762527}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1230762530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2994,7 +2663,6 @@ GameObject:
   - component: {fileID: 1370778243}
   - component: {fileID: 1370778242}
   - component: {fileID: 1370778241}
-  - component: {fileID: 1370778240}
   m_Layer: 0
   m_Name: Tree (4)
   m_TagString: Untagged
@@ -3002,20 +2670,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1370778240
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370778239}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1370778241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3092,7 +2746,6 @@ GameObject:
   - component: {fileID: 1514405848}
   - component: {fileID: 1514405847}
   - component: {fileID: 1514405846}
-  - component: {fileID: 1514405845}
   m_Layer: 0
   m_Name: Hill (3)
   m_TagString: Untagged
@@ -3100,20 +2753,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1514405845
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514405844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1514405846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3244,11 +2883,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestTime: 2
   autoEnableHarvest: 0
+  harvestIterations: 1
   harvestables:
   - {fileID: 472848542}
   - {fileID: 999477506}
   - {fileID: 1971425766}
   - {fileID: 1230762527}
+  Hint: {fileID: 0}
+--- !u!1001 &1568498784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.30999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.20838994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092572, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656370518625092573, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3959f86f59f6ee641b758e44bd854ada, type: 3}
 --- !u!1 &1580376484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,7 +2958,6 @@ GameObject:
   - component: {fileID: 1580376485}
   - component: {fileID: 1580376488}
   - component: {fileID: 1580376487}
-  - component: {fileID: 1580376486}
   m_Layer: 0
   m_Name: Wheat (2)
   m_TagString: Untagged
@@ -3283,20 +2980,6 @@ Transform:
   m_Father: {fileID: 183687695}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1580376486
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580376484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1580376487
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3358,7 +3041,6 @@ GameObject:
   - component: {fileID: 1661858098}
   - component: {fileID: 1661858097}
   - component: {fileID: 1661858096}
-  - component: {fileID: 1661858095}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -3366,20 +3048,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1661858095
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661858094}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1661858096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3456,7 +3124,6 @@ GameObject:
   - component: {fileID: 1723192234}
   - component: {fileID: 1723192233}
   - component: {fileID: 1723192232}
-  - component: {fileID: 1723192231}
   m_Layer: 0
   m_Name: Tree (2)
   m_TagString: Untagged
@@ -3464,20 +3131,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1723192231
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723192230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1723192232
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3599,7 +3252,6 @@ GameObject:
   - component: {fileID: 1938125848}
   - component: {fileID: 1938125851}
   - component: {fileID: 1938125850}
-  - component: {fileID: 1938125849}
   m_Layer: 0
   m_Name: Wheat (3)
   m_TagString: Untagged
@@ -3622,20 +3274,6 @@ Transform:
   m_Father: {fileID: 183687695}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1938125849
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938125847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1938125850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3697,7 +3335,6 @@ GameObject:
   - component: {fileID: 1971425767}
   - component: {fileID: 1971425770}
   - component: {fileID: 1971425769}
-  - component: {fileID: 1971425768}
   m_Layer: 0
   m_Name: Wheat (2)
   m_TagString: Untagged
@@ -3720,20 +3357,6 @@ Transform:
   m_Father: {fileID: 1539278011}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 23.5, z: 0}
---- !u!64 &1971425768
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971425766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1971425769
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3795,7 +3418,6 @@ GameObject:
   - component: {fileID: 2019213574}
   - component: {fileID: 2019213573}
   - component: {fileID: 2019213572}
-  - component: {fileID: 2019213571}
   m_Layer: 0
   m_Name: Hill (1)
   m_TagString: Untagged
@@ -3803,20 +3425,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2019213571
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019213570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2019213572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3893,7 +3501,6 @@ GameObject:
   - component: {fileID: 2081222842}
   - component: {fileID: 2081222841}
   - component: {fileID: 2081222840}
-  - component: {fileID: 2081222839}
   m_Layer: 0
   m_Name: Hill (8)
   m_TagString: Untagged
@@ -3901,20 +3508,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2081222839
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081222838}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2081222840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4045,11 +3638,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestTime: 2
   autoEnableHarvest: 0
+  harvestIterations: 1
   harvestables:
   - {fileID: 959370872}
   - {fileID: 1132998452}
   - {fileID: 191753858}
   - {fileID: 1115994285}
+  Hint: {fileID: 0}
 --- !u!1001 &526209254131340148
 PrefabInstance:
   m_ObjectHideFlags: 0

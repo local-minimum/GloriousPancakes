@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitArea : MonoBehaviour
 {
@@ -34,7 +33,7 @@ public class ExitArea : MonoBehaviour
 
     private void Update()
     {
-        if (inventory.Full)
+        if (inventory.Full && player.IsAlive)
         {
             Hint.SetText("Exit", false);
 
@@ -44,8 +43,10 @@ public class ExitArea : MonoBehaviour
 
             if (progress == 1)
             {
-                // Load next scene
-                Debug.Log("Next scene");
+                var progression = GameProgression.instance;
+                progression.NextPhase();
+                progression.SetYoungestMemberHealth(player.Health);
+                SceneManager.LoadScene("HouseScene");
             }
         } else
         {

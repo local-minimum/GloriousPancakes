@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthUI : MonoBehaviour
 {
@@ -53,5 +53,10 @@ public class HealthUI : MonoBehaviour
         previousHealth = newHealth;
         health.fillAmount = newHealth;
         updating = false;
+
+        if (newHealth == 0)
+        {
+            SceneManager.LoadScene("HouseScene");
+        }
     }
 }

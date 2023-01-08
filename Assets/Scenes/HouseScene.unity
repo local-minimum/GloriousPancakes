@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 19852990}
   - component: {fileID: 19852989}
   m_Layer: 0
-  m_Name: Narrator
+  m_Name: IntroNarrator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phase: 0
   storyBox: {fileID: 887818391}
   storyBeats:
   - name: Intro
@@ -169,7 +170,7 @@ MonoBehaviour:
   - name: Pancakes 2
     delayBefore: 0.2
     speaker: Sam
-    message: PANCAKES!!!
+    message: PANCAKES!
   - name: Pancakes 2
     delayBefore: 0.2
     speaker: Alex
@@ -209,6 +210,7 @@ MonoBehaviour:
   - {fileID: 1675966048}
   - {fileID: 1513488164}
   - {fileID: 1103163740}
+  triggersNextPhase: 1
 --- !u!4 &19852990
 Transform:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88126288
 GameObject:
@@ -1335,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003297120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.91, y: 0.19, z: 0.6}
+  m_LocalPosition: {x: 1.87, y: 0.19, z: 0.6}
   m_LocalScale: {x: -4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1632,6 +1634,57 @@ MonoBehaviour:
   SpeakerName: Lucinda
   positionChangeFrequency: 0.45
   moveMagnitude: {x: 0.1, y: 0.2, z: 0}
+--- !u!1 &1168363246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168363248}
+  - component: {fileID: 1168363247}
+  m_Layer: 0
+  m_Name: CharacterKiller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1168363247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168363246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13299b6378395e499e058a06b1487d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 958406339}
+  - {fileID: 1975507217}
+  - {fileID: 859036777}
+  - {fileID: 1675966043}
+  - {fileID: 1513488159}
+  - {fileID: 1103163735}
+--- !u!4 &1168363248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168363246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.050211906, y: 4.55249, z: -0.71850586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324956810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2193,144 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516023156}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1601329317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601329319}
+  - component: {fileID: 1601329318}
+  m_Layer: 0
+  m_Name: DeadMemberNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1601329318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601329317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980252a4d8a0458499a645ca6c5ec114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextCarol:
+  - name: No one left
+    delayBefore: 0.5
+    speaker: Carol
+    message: It's just me left
+  - name: Not fun
+    delayBefore: 0.5
+    speaker: Carol
+    message: What are pancakes eaten alone
+  - name: Neighbors
+    delayBefore: 0.5
+    speaker: Carol
+    message: Lets se if neighbors are home
+  - name: No risk
+    delayBefore: 0
+    speaker: Carol
+    message: No point risking my own life
+  NextAlex:
+  - name: Me
+    delayBefore: 0.4
+    speaker: Alex
+    message: I guess it's my turn
+  - name: Yes
+    delayBefore: 0.5
+    speaker: Carol
+    message: Yes, the pancakes need to be made
+  - name: OK
+    delayBefore: 0.5
+    speaker: Alex
+    message: See you later
+  NextKim:
+  - name: You better
+    delayBefore: 0.2
+    speaker: Alex
+    message: Kim, you better not mess this up!
+  - name: Be kind
+    delayBefore: 0
+    speaker: Carol
+    message: We don't use that tone in this house.
+  - name: Sorry
+    delayBefore: 0
+    speaker: Alex
+    message: Sorry
+  - name: Kim
+    delayBefore: 0
+    speaker: Kim
+    message: It's alright. It will be fine.
+  NextLucinda:
+  - name: Lost Sam
+    delayBefore: 0.8
+    speaker: Lucinda
+    message: I guess Sam didn't make it.
+  - name: Seems that way
+    delayBefore: 0
+    speaker: Carol
+    message: Seems that way.
+  - name: Oh well
+    delayBefore: 0
+    speaker: Lucinda
+    message: Oh well. My turn.
+  NextSam:
+  - name: Where
+    delayBefore: 0.3
+    speaker: Sam
+    message: Where's Jane?
+  - name: You know
+    delayBefore: 0
+    speaker: Kim
+    message: You know wher Jane is.
+  - name: Why
+    delayBefore: 0
+    speaker: Sam
+    message: Why didn't they just do better?
+  - name: You will do better
+    delayBefore: 0.7
+    speaker: Carol
+    message: You will do better, much better.
+  NooneLeft:
+  - name: 
+    delayBefore: 1
+    speaker: 
+    message: There was noone left in the house
+  - name: 
+    delayBefore: 1
+    speaker: 
+    message: This was very strange and should not have happened
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+  storyBox: {fileID: 887818391}
+--- !u!4 &1601329319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601329317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3979857, y: 1.6306624, z: 0.06999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611734096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2733,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 974536928892349221, guid: 5a06ac9c0699a814182a7c901ae7897c, type: 3}
   m_PrefabInstance: {fileID: 974536927615415091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1965785170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965785172}
+  - component: {fileID: 1965785171}
+  m_Layer: 0
+  m_Name: MilkNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1965785171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965785170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phase: 2
+  storyBox: {fileID: 887818391}
+  storyBeats:
+  - name: Praise
+    delayBefore: 0.4
+    speaker: Sam
+    message: You got the wheat
+  - name: Easy
+    delayBefore: 0
+    speaker: Jane
+    message: It was easy!
+  - name: Need cream
+    delayBefore: 0
+    speaker: Alex
+    message: There be no 'cakes without cream
+  - name: Refute
+    delayBefore: 0
+    speaker: Carol
+    message: Well...
+  - name: Law of 'cakes
+    delayBefore: 0
+    speaker: Alex
+    message: I know, but my 'cakes demand cream!
+  - name: Order
+    delayBefore: 0
+    speaker: Carol
+    message: Jane, time to milk the cow
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+  triggersNextPhase: 0
+--- !u!4 &1965785172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965785170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.1594086, y: -2.096321, z: -1.3130779}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1975507217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,3 +3051,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a06ac9c0699a814182a7c901ae7897c, type: 3}
+--- !u!1001 &7812059021091569714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.050211906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.55249
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.71850586
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202754, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202780, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: m_Name
+      value: GameProgression
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812059022427202781, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
+      propertyPath: debugPhase
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
