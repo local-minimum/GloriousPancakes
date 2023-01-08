@@ -23,4 +23,12 @@ public class Inventory : MonoBehaviour
 
         nextSlot++;
     }
+
+    public bool Full
+    {
+        get
+        {
+            return nextSlot >= slots.Length;
+        }
+    }
 }
