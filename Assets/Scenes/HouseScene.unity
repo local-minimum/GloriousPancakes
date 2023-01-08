@@ -327,6 +327,81 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &276165401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276165403}
+  - component: {fileID: 276165402}
+  m_Layer: 0
+  m_Name: EggsNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &276165402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276165401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phase: 3
+  storyBox: {fileID: 887818391}
+  storyBeats:
+  - name: Berries
+    delayBefore: 0.5
+    speaker: Alex
+    message: We need berries
+  - name: Berries
+    delayBefore: 0
+    speaker: Carol
+    message: Yes, but first we have to have eggs
+  - name: Neccesity
+    delayBefore: 0
+    speaker: Carol
+    message: Or there won't be any pancakes at all
+  - name: Glory
+    delayBefore: 0
+    speaker: Alex
+    message: But they won't be glorious without berries
+  - name: First eggs
+    delayBefore: 0
+    speaker: Carol
+    message: That they won't, but first eggs
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+  triggersNextPhase: 0
+--- !u!4 &276165403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276165401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3979857, y: 1.6306624, z: 0.06999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375540475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,7 +3183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812059022427202781, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
       propertyPath: debugPhase
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}

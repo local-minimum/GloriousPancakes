@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FightMilk.unity
     guid: 555b2386b38518e469f851d422dea385
+  - enabled: 1
+    path: Assets/Scenes/FightEggs.unity
+    guid: 789a042818d21d040abee9b7135d1437
   m_configObjects: {}

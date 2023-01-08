@@ -21,6 +21,8 @@ public class WorldPlayer : MonoBehaviour
                 return PlaceTransition.PlaceTarget.Field;
             case GameProgression.GamePhase.Milk:
                 return PlaceTransition.PlaceTarget.Pen;
+            case GameProgression.GamePhase.Eggs:
+                return PlaceTransition.PlaceTarget.Coop;
             default:
                 return target;
 

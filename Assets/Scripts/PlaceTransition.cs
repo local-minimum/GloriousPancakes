@@ -29,6 +29,9 @@ public class PlaceTransition : MonoBehaviour
             case GameProgression.GamePhase.Milk:
                 SceneManager.LoadScene("FightMilk");
                 return;
+            case GameProgression.GamePhase.Eggs:
+                SceneManager.LoadScene("FightEggs");
+                return;
             default:
                 Debug.LogWarning("I don't know what to do");
                 return;
