@@ -32,15 +32,15 @@ public class HealthUI : MonoBehaviour
     IEnumerator<WaitForSeconds> ChangeHealth(float newHealth)
     {
         updating = true;
-        health.enabled = false;
+        health.fillAmount = previousHealth;
         for (int i=0; i<3; i++)
         {
             yield return new WaitForSeconds(0.2f);
-            health.enabled = true;
+            health.fillAmount = newHealth;
             if (i < 2)
             {
                 yield return new WaitForSeconds(0.25f);
-                health.enabled = false;
+                health.fillAmount = previousHealth;
             }
         }
 

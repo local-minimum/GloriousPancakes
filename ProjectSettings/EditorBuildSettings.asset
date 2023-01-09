@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FightEggs.unity
     guid: 789a042818d21d040abee9b7135d1437
+  - enabled: 1
+    path: Assets/Scenes/FightBerries.unity
+    guid: 80bcfeb275ad9c04095f01735d0acc53
   m_configObjects: {}

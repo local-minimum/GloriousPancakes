@@ -6,7 +6,7 @@ public class GameProgression : MonoBehaviour
 {
     public static GameProgression instance { get; private set; }
     
-    public enum GamePhase { Intro, FirstWheat, Milk, Eggs };
+    public enum GamePhase { Intro, FirstWheat, Milk, Eggs, Berries };
     public enum FamilyMember { Jane, Sam, Lucinda, Kim, Alex, Carol, NONE };
 
     [SerializeField]
@@ -43,6 +43,9 @@ public class GameProgression : MonoBehaviour
                 break;
             case GamePhase.Milk:
                 phase = GamePhase.Eggs;
+                break;
+            case GamePhase.Eggs:
+                phase = GamePhase.Berries;
                 break;
             default:
                 Debug.LogWarning($"No known phase after {phase}");

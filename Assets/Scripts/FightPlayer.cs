@@ -293,7 +293,9 @@ public class FightPlayer : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
             force *= 0.5f;
         }
-        
+
+        yield return new WaitForSeconds(0.5f);
+
         IgnoreMonsterColllisions(false);
         disablePlayer = false;
     }

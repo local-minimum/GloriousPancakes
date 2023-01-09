@@ -36,13 +36,22 @@ public class HarvestSpot : MonoBehaviour
                 _MayHarvest = false;
             }
         }
-    }
+    }    
 
     FightPlayer player;
 
     bool hasPlayer = false;
     bool harvested = false;
+
+    public bool Harvested
+    {
+        get
+        {
+            return harvested;
+        }
+    }
     
+
     void Start()
     {
         if (Hint == null) Hint = GetComponentInChildren<HintUI>();
