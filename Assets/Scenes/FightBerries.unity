@@ -2217,6 +2217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e51a7fdacc53141ba975c9edded5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackHurt: 0.3
+  attackPush: 20
 --- !u!65 &742343503
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2449,6 +2451,14 @@ PrefabInstance:
     - target: {fileID: 6732421633094797987, guid: c05c415e21de8e64eb1274c9e1169b79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732421633094797988, guid: c05c415e21de8e64eb1274c9e1169b79, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64811563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732421633094797988, guid: c05c415e21de8e64eb1274c9e1169b79, type: 3}
+      propertyPath: m_Center.y
+      value: -0.6759422
       objectReference: {fileID: 0}
     - target: {fileID: 6732421633094797989, guid: c05c415e21de8e64eb1274c9e1169b79, type: 3}
       propertyPath: m_Name
@@ -3232,6 +3242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e51a7fdacc53141ba975c9edded5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackHurt: 0.3
+  attackPush: 20
 --- !u!65 &1141675740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4474,6 +4486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e51a7fdacc53141ba975c9edded5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackHurt: 0.3
+  attackPush: 20
 --- !u!1 &1917747293
 GameObject:
   m_ObjectHideFlags: 0
