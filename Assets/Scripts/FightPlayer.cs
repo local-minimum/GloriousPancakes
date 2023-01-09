@@ -121,7 +121,7 @@ public class FightPlayer : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            SustainedJump(horizontal);
+            // SustainedJump(horizontal);
         } else if (Input.GetButtonUp("Jump"))
         {
             Jumping = false;
@@ -194,9 +194,31 @@ public class FightPlayer : MonoBehaviour
         if (Jumping || (jumpState != JumpState.NotJumping && Time.timeSinceLevelLoad - jumpStart < 5 * jumpSustainTime)) return;
         Debug.Log("Starting jump");
         Jumping = true;
-        rb.AddForce(Vector3.up * jumpUpForce + xDirection * jumpUpForce * lateralForceFactor * Vector3.right, ForceMode.Impulse);
+
+        var lateralForce = xDirection * jumpUpForce * lateralForceFactor;
+        rb.AddForce(Vector3.up * jumpUpForce +  Vector3.right * lateralForce, ForceMode.Impulse);
+
+        StartCoroutine(SustainedForce(jumpUpForce, lateralForce, 0.3f));
+
         Grounded = false;
         jumpState = JumpState.ApplyingForce;
+    }
+
+    IEnumerator<WaitForSeconds> SustainedForce(float upForce, float lateralForce, float duration, float decay = 0.95f)
+    {
+        float start = Time.timeSinceLevelLoad;
+        while (Time.timeSinceLevelLoad - start < duration)
+        {
+            if (!Input.GetButton("Jump")) yield break;
+            upForce *= decay;
+            float horizontal = Input.GetAxis("Horizontal");
+            lateralForce *= Mathf.Sign(horizontal);
+            rb.AddForce(Vector3.up * upForce + Vector3.right * lateralForce, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Jumping = false;
+        jumpState = JumpState.Flying;
     }
 
     void GroundedMotion(float horizontal)

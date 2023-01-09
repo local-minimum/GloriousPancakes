@@ -166,7 +166,7 @@ MonoBehaviour:
   groundAllowance: 0.1
   dampen: 0.3
   clampVelocities: {x: 8, y: 10, z: 0}
-  jumpUpForce: 3
+  jumpUpForce: 60
   lateralForceFactor: 0.03
 --- !u!1 &5446285261701468273
 GameObject:
