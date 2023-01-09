@@ -7,6 +7,8 @@ public class MilkMonster : MonoBehaviour
     [SerializeField]
     AudioClip moo;
 
+    Spinner spinner;
+
     AudioSource speaker;
 
     [SerializeField]
@@ -73,6 +75,7 @@ public class MilkMonster : MonoBehaviour
 
     void Start()
     {
+        spinner = GetComponentInChildren<Spinner>();
         head = GetComponentInChildren<MilkMonsterHead>();
         anim = GetComponentInChildren<Animator>();
         harvest = GetComponentInChildren<HarvestSpot>();
@@ -80,6 +83,8 @@ public class MilkMonster : MonoBehaviour
 
         harvest.MayHarvest = false;
         head.FacingWest = rushingWest;
+
+        spinner.gameObject.SetActive(false);
 
         milkUIOffset = milkUI.localPosition;
     }
@@ -130,13 +135,17 @@ public class MilkMonster : MonoBehaviour
         anim.SetTrigger("Crash");
         head.Dizzy = true;
         head.Attacking = false;
-        
+        spinner.gameObject.SetActive(true);
+
         if (!harvest.MayHarvest)
         {
             harvest.MayHarvest = true;
         }
 
         yield return new WaitForSeconds(CrashTime);
+
+        spinner.gameObject.SetActive(false);
+
         anim.SetTrigger("Ready");
 
         rushingWest = !rushingWest;
