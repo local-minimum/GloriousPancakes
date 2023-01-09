@@ -466,7 +466,7 @@ MonoBehaviour:
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
   minRestTime: 2.5
-  maxRestTime: 4
+  maxRestTime: 5
   locations:
   - {fileID: 49379553}
   - {fileID: 433987521}
@@ -687,7 +687,6 @@ GameObject:
   - component: {fileID: 136293152}
   - component: {fileID: 136293155}
   - component: {fileID: 136293154}
-  - component: {fileID: 136293153}
   m_Layer: 0
   m_Name: Berry
   m_TagString: Untagged
@@ -710,20 +709,6 @@ Transform:
   m_Father: {fileID: 896339652}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &136293153
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136293151}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &136293154
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -868,7 +853,6 @@ GameObject:
   - component: {fileID: 178954440}
   - component: {fileID: 178954443}
   - component: {fileID: 178954442}
-  - component: {fileID: 178954441}
   m_Layer: 0
   m_Name: Berry (1)
   m_TagString: Untagged
@@ -891,20 +875,6 @@ Transform:
   m_Father: {fileID: 896339652}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &178954441
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178954439}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &178954442
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1183,7 +1153,6 @@ GameObject:
   - component: {fileID: 357503617}
   - component: {fileID: 357503620}
   - component: {fileID: 357503619}
-  - component: {fileID: 357503618}
   m_Layer: 0
   m_Name: Berry (1)
   m_TagString: Untagged
@@ -1206,20 +1175,6 @@ Transform:
   m_Father: {fileID: 1530655019}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &357503618
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357503616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &357503619
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1801,7 +1756,6 @@ GameObject:
   - component: {fileID: 567510067}
   - component: {fileID: 567510070}
   - component: {fileID: 567510069}
-  - component: {fileID: 567510068}
   m_Layer: 0
   m_Name: Berry
   m_TagString: Untagged
@@ -1824,20 +1778,6 @@ Transform:
   m_Father: {fileID: 16897849}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &567510068
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567510066}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &567510069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2698,7 +2638,6 @@ GameObject:
   - component: {fileID: 903210159}
   - component: {fileID: 903210162}
   - component: {fileID: 903210161}
-  - component: {fileID: 903210160}
   m_Layer: 0
   m_Name: Berry
   m_TagString: Untagged
@@ -2721,20 +2660,6 @@ Transform:
   m_Father: {fileID: 1530655019}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &903210160
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903210158}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &903210161
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2975,7 +2900,6 @@ GameObject:
   - component: {fileID: 1005496995}
   - component: {fileID: 1005496994}
   - component: {fileID: 1005496993}
-  - component: {fileID: 1005496992}
   m_Layer: 0
   m_Name: Berry (2)
   m_TagString: Untagged
@@ -2983,20 +2907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1005496992
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005496991}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1005496993
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3393,7 +3303,6 @@ GameObject:
   - component: {fileID: 1165390913}
   - component: {fileID: 1165390912}
   - component: {fileID: 1165390911}
-  - component: {fileID: 1165390910}
   m_Layer: 0
   m_Name: Berry (2)
   m_TagString: Untagged
@@ -3401,20 +3310,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1165390910
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165390909}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1165390911
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3915,7 +3810,7 @@ MonoBehaviour:
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
   minRestTime: 2.5
-  maxRestTime: 4
+  maxRestTime: 5
   locations:
   - {fileID: 644514257}
   - {fileID: 1326292700}
@@ -4335,7 +4230,7 @@ MonoBehaviour:
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
   minRestTime: 2.5
-  maxRestTime: 4
+  maxRestTime: 5
   locations:
   - {fileID: 1946219565}
   - {fileID: 367877646}
@@ -4639,7 +4534,6 @@ GameObject:
   - component: {fileID: 1777065889}
   - component: {fileID: 1777065892}
   - component: {fileID: 1777065891}
-  - component: {fileID: 1777065890}
   m_Layer: 0
   m_Name: Berry (2)
   m_TagString: Untagged
@@ -4662,20 +4556,6 @@ Transform:
   m_Father: {fileID: 896339652}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1777065890
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777065888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1777065891
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4925,7 +4805,6 @@ GameObject:
   - component: {fileID: 1998625978}
   - component: {fileID: 1998625981}
   - component: {fileID: 1998625980}
-  - component: {fileID: 1998625979}
   m_Layer: 0
   m_Name: Berry (1)
   m_TagString: Untagged
@@ -4948,20 +4827,6 @@ Transform:
   m_Father: {fileID: 16897849}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1998625979
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998625977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1998625980
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -101,7 +101,7 @@ public class HarvestSpot : MonoBehaviour
         {
             if (!harvesting)
             {
-                if (Input.GetButtonDown("Harvest"))
+                if (Input.GetButton("Harvest"))
                 {
                     harvetStart = Time.timeSinceLevelLoad;
                     harvesting = true;

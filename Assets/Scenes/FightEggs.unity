@@ -1223,8 +1223,8 @@ MonoBehaviour:
   birth: {fileID: 8300000, guid: 396e4e84c0ebc164582f48c49576eccb, type: 3}
   minTrackTime: 3
   maxTrackTime: 7
-  minReclaimEggTime: 2
-  maxReclaimEggTime: 3.5
+  minReclaimEggTime: 2.25
+  maxReclaimEggTime: 3
   egg: {fileID: 1601129081}
   trackingPlayerOffset: -4
   EggXOffset: 0.4

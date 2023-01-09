@@ -161,7 +161,7 @@ MonoBehaviour:
   dampen: 0.3
   clampVelocities: {x: 8, y: 10, z: 0}
   jumpUpForce: 60
-  lateralForceFactor: 0.03
+  lateralForceFactor: 0.01
 --- !u!82 &8062430968209921963
 AudioSource:
   m_ObjectHideFlags: 0

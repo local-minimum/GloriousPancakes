@@ -126,10 +126,13 @@ public class FightPlayer : MonoBehaviour
             { 
                 GroundedMotion(horizontal);
             }
-        }       
+        } else {
+            GroundedMotion(horizontal, 0.2f, false);
+        }
 
         if (Input.GetButton("Jump"))
         {
+
             // SustainedJump(horizontal);
         } else if (Input.GetButtonUp("Jump"))
         {
@@ -207,22 +210,21 @@ public class FightPlayer : MonoBehaviour
         var lateralForce = xDirection * jumpUpForce * lateralForceFactor;
         rb.AddForce(Vector3.up * jumpUpForce +  Vector3.right * lateralForce, ForceMode.Impulse);
 
-        StartCoroutine(SustainedForce(jumpUpForce, lateralForce, 0.3f));
+        StartCoroutine(SustainedForce(jumpUpForce, 0.3f));
 
         Grounded = false;
         jumpState = JumpState.ApplyingForce;
     }
 
-    IEnumerator<WaitForSeconds> SustainedForce(float upForce, float lateralForce, float duration, float decay = 0.95f)
+    IEnumerator<WaitForSeconds> SustainedForce(float upForce, float duration, float decay = 0.95f)
     {
         float start = Time.timeSinceLevelLoad;
         while (Time.timeSinceLevelLoad - start < duration)
         {
             if (!Input.GetButton("Jump")) yield break;
             upForce *= decay;
-            float horizontal = Input.GetAxis("Horizontal");
-            lateralForce *= Mathf.Sign(horizontal);
-            rb.AddForce(Vector3.up * upForce + Vector3.right * lateralForce, ForceMode.Impulse);
+                        
+            rb.AddForce(Vector3.up * upForce, ForceMode.Impulse);
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -230,16 +232,18 @@ public class FightPlayer : MonoBehaviour
         jumpState = JumpState.Flying;
     }
 
-    void GroundedMotion(float horizontal)
+    void GroundedMotion(float horizontal, float factor = 1, bool doDampen = true)
     {
         if (Mathf.Abs(horizontal) > reactMagnitude)
         {
-            rb.AddForce(Vector3.right * acceleration.Evaluate(rb.velocity.magnitude) * horizontal * Time.deltaTime * forceScaler);
+            rb.AddForce(Vector3.right * acceleration.Evaluate(rb.velocity.magnitude) * horizontal * Time.deltaTime * forceScaler * factor);
         }
-        else
+        else if (doDampen)
         {
             float dampening = (1 - Time.deltaTime) * dampen;
-            rb.velocity *= dampening;
+            var velocity = rb.velocity;
+            velocity.x *= dampening;
+            rb.velocity = velocity;
         }
     }
 
