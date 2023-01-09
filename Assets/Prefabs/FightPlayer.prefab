@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 687920456785948076}
   - component: {fileID: 687920456785948077}
   - component: {fileID: 687920456785948050}
-  - component: {fileID: 687920456785948078}
   - component: {fileID: 687920456785948079}
   - component: {fileID: 687920456785948073}
   - component: {fileID: 8062430968209921963}
+  - component: {fileID: 899339199063567813}
   m_Layer: 3
   m_Name: FightPlayer
   m_TagString: Untagged
@@ -88,19 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &687920456785948078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687920456785948048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5220544, y: 0.841772, z: 1}
-  m_Center: {x: 0.042533666, y: -0.06469634, z: 0}
 --- !u!54 &687920456785948079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,6 +258,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &899339199063567813
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687920456785948048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3626659
+  m_Height: 0.87093043
+  m_Direction: 1
+  m_Center: {x: 0.07924819, y: -0.06453478, z: 0}
 --- !u!1 &5446285261701468273
 GameObject:
   m_ObjectHideFlags: 0

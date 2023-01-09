@@ -98,7 +98,18 @@ public class Narrator : MonoBehaviour
             if (!MakeStory())
             {
                 if (triggersNextPhase) progression.NextPhase();
-                SceneManager.LoadScene("WorldScene");
+
+                var phase = progression.Phase;
+                if (
+                    phase == GameProgression.GamePhase.EndingFeast
+                    || phase == GameProgression.GamePhase.EndingMeagerFeast
+                )
+                {
+                    SceneManager.LoadScene("MainMenu");
+                } else
+                {
+                    SceneManager.LoadScene("WorldScene");
+                }
             }
         }
     }

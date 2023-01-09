@@ -465,8 +465,8 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: d3c44db56c7ec6d4e965cdad52ae9cb0, type: 3}
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
-  minRestTime: 3
-  maxRestTime: 6
+  minRestTime: 2.5
+  maxRestTime: 4
   locations:
   - {fileID: 49379553}
   - {fileID: 433987521}
@@ -3914,8 +3914,8 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: d3c44db56c7ec6d4e965cdad52ae9cb0, type: 3}
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
-  minRestTime: 3
-  maxRestTime: 6
+  minRestTime: 2.5
+  maxRestTime: 4
   locations:
   - {fileID: 644514257}
   - {fileID: 1326292700}
@@ -4334,8 +4334,8 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: d3c44db56c7ec6d4e965cdad52ae9cb0, type: 3}
   shrug: {fileID: 8300000, guid: fa4190dd1bd01204aac62e10b1fc3d8b, type: 3}
   shurgLength: 0.8
-  minRestTime: 3
-  maxRestTime: 6
+  minRestTime: 2.5
+  maxRestTime: 4
   locations:
   - {fileID: 1946219565}
   - {fileID: 367877646}

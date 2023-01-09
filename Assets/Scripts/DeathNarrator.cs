@@ -146,13 +146,10 @@ public class DeathNarrator : MonoBehaviour
             if (!MakeStory())
             {
                 progression.NewDeath = false;
-                var youngest = progression.YoungestAlive();
-                var phase = progression.Phase;
+                var youngest = progression.YoungestAlive();                
                 if (
                     youngest == GameProgression.FamilyMember.NONE 
                     || youngest == GameProgression.FamilyMember.Carol
-                    || phase == GameProgression.GamePhase.EndingFeast
-                    || phase == GameProgression.GamePhase.EndingMeagerFeast
                 )
                 {
                     SceneManager.LoadScene("MainMenu");

@@ -427,7 +427,7 @@ MonoBehaviour:
   - name: Survivors
     delayBefore: 0.5
     speaker: 
-    message: At least everyone that survived the harvest
+    message: At least the survivors were happy
   - name: End
     delayBefore: 0.5
     speaker: 
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   - name: Ate
     delayBefore: 1
     speaker: Carol
-    message: Everyone gets at least one I hope
+    message: Everyone gets at least one, I hope
   - name: Better years
     delayBefore: 1
     speaker: 
