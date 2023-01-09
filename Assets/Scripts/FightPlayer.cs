@@ -271,7 +271,7 @@ public class FightPlayer : MonoBehaviour
         rb.AddForce(force, ForceMode.Impulse);
 
         health = Mathf.Clamp01(health - damage);
-        Debug.Log($"Took {damage} / health {health}");
+        Debug.Log($"Took {damage} / health {health} / Force {force}");
 
         if (health <= 0) {
             IgnoreMonsterColllisions(false);
