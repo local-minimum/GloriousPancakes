@@ -5,6 +5,11 @@ using UnityEngine;
 public class HousePerson : MonoBehaviour
 {
     [SerializeField]
+    AudioClip speach;
+
+    AudioSource speaker;
+    
+    [SerializeField]
     string SpeakerName;
 
     Vector3 origin;
@@ -21,6 +26,7 @@ public class HousePerson : MonoBehaviour
     {
         origin = transform.position;
         startRotation = transform.localRotation;
+        speaker = GetComponent<AudioSource>();
     }
 
     public bool IsCalled(string name)
@@ -37,6 +43,9 @@ public class HousePerson : MonoBehaviour
         if (speaking) {
             yield break;
         }
+
+        speaker.PlayOneShot(speach);
+
         speaking = true;
         var start = Time.timeSinceLevelLoad;
         while (Time.timeSinceLevelLoad - start < duration)
@@ -52,5 +61,6 @@ public class HousePerson : MonoBehaviour
         speaking = false;
         transform.position = origin;
         transform.localRotation = startRotation;
+        speaker.Stop();
     }
 }

@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class BushMonster : MonoBehaviour
 {
+    AudioSource speaker;
+
+    [SerializeField]
+    AudioClip jump;
+    [SerializeField]
+    AudioClip land;
+    [SerializeField]
+    AudioClip shrug;
+
+
     enum BushPhases { Stand, Shrug, Jump };
 
     BushPhases phase = BushPhases.Jump;
@@ -43,6 +53,7 @@ public class BushMonster : MonoBehaviour
         Bottom = GetComponentInChildren<BushMonsterBottom>();
         anim = GetComponentInChildren<Animator>();
         harvest = GetComponentInChildren<HarvestSpot>();
+        speaker = GetComponent<AudioSource>();
 
         PlaceInCurrentLocation();
     }
@@ -58,6 +69,8 @@ public class BushMonster : MonoBehaviour
         sequencing = true;
         anim.SetTrigger("Shrug");
         Top.Attacking = true;
+
+        speaker.PlayOneShot(shrug);
 
         yield return new WaitForSeconds(shurgLength);
 
@@ -106,14 +119,18 @@ public class BushMonster : MonoBehaviour
         float start = Time.timeSinceLevelLoad;
         float progress = 0;
 
+        speaker.PlayOneShot(jump);
+
         while (progress < 1)
         {
             progress = (Time.timeSinceLevelLoad - start) / duration;
             Vector3 groundPosition = Vector3.Lerp(from.position, to.position, lateralJump.Evaluate(progress));
             Vector3 height = Vector3.up * horizontalJump.Evaluate(progress) * heightFactor;
-            transform.position = groundPosition + height;
+            transform.position = groundPosition + height;            
             yield return new WaitForSeconds(0.02f);            
         }
+
+        speaker.PlayOneShot(land);
 
         transform.position = to.position;
         currentLocation = target;

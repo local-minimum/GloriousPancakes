@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class ChickenMonster : MonoBehaviour
 {
+    AudioSource speaker;
+
+    [SerializeField]
+    AudioClip pock;
+    [SerializeField]
+    AudioClip shortPock;
+    [SerializeField]
+    AudioClip angry;
+    [SerializeField]
+    AudioClip birth;
 
     ParticleSystem duster;
 
@@ -45,6 +55,7 @@ public class ChickenMonster : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         player = FindObjectOfType<FightPlayer>();
         duster = GetComponentInChildren<ParticleSystem>();
+        speaker = GetComponent<AudioSource>();
 
         egg.gameObject.SetActive(false);
 
@@ -118,7 +129,17 @@ public class ChickenMonster : MonoBehaviour
         sequencing = true;
         phase = ChickenPhases.Tracking;
 
-        yield return new WaitForSeconds(trackTime);
+        var t = trackTime;
+
+        yield return new WaitForSeconds(t * 0.33f);
+
+        speaker.PlayOneShot(pock);
+
+        yield return new WaitForSeconds(t * 0.33f);
+
+        speaker.PlayOneShot(pock);
+
+        yield return new WaitForSeconds(t * 0.33f);
 
         sequencing = false;
     }
@@ -155,9 +176,15 @@ public class ChickenMonster : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
 
+        speaker.PlayOneShot(shortPock);
+
         duster.Play();
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.2f);
+
+        speaker.PlayOneShot(birth);
+        
+        yield return new WaitForSeconds(0.4f);
 
         Vector3 pos = egg.transform.position;
         pos.x = AverageHeadX + EggXOffset;
@@ -179,8 +206,13 @@ public class ChickenMonster : MonoBehaviour
     {
         sequencing = true;
         phase = ChickenPhases.ReclaimEgg;
+        float t = reclaimEggTime;
 
-        yield return new WaitForSeconds(reclaimEggTime);
+        yield return new WaitForSeconds(0.5f * t);
+
+        speaker.PlayOneShot(angry);
+
+        yield return new WaitForSeconds(0.5f * t);
 
         SetHeadPecking(true);
         anim.SetTrigger("Pick");
@@ -191,6 +223,7 @@ public class ChickenMonster : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
 
+        speaker.PlayOneShot(shortPock);
         egg.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(0.55f);

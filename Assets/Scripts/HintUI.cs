@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class HintUI : MonoBehaviour
 {
+    [SerializeField]
+    AudioClip startSound;
+
+    AudioSource speaker;
+
     TMPro.TextMeshProUGUI Text;
     Image Progress;
 
@@ -12,6 +17,7 @@ public class HintUI : MonoBehaviour
     {
         Text = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         Progress = GetComponentInChildren<Image>();
+        speaker = GetComponent<AudioSource>();
     }
 
 
@@ -24,7 +30,14 @@ public class HintUI : MonoBehaviour
 
     public void SetProgress(float progress)
     {
-        if (progress > 0) Text.text = "";
+        if (progress > 0)
+        {
+            Text.text = "";
+            if (!speaker.isPlaying)
+            {
+                speaker.PlayOneShot(startSound);
+            }
+        }
         Progress.fillAmount = progress;
     }
 

@@ -28,7 +28,7 @@ public class MilkMonsterHead : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<FightPlayer>();
-        duster = GetComponentInChildren<ParticleSystem>();
+        duster = GetComponentInChildren<ParticleSystem>();        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,7 +38,7 @@ public class MilkMonsterHead : MonoBehaviour
 
             if (Attacking)
             {
-                player.Hurt(Vector3.up * tossAmount, tossHurt, false);
+                player.Hurt(Vector3.up * tossAmount, tossHurt, false);                
             } else
             {
                 player.Hurt((FacingWest != Dizzy ? -1 : 1) * Vector3.right * pushAmount + Vector3.up * pushAmount, pushHurt);

@@ -5,6 +5,11 @@ using UnityEngine;
 public class MilkMonster : MonoBehaviour
 {
     [SerializeField]
+    AudioClip moo;
+
+    AudioSource speaker;
+
+    [SerializeField]
     Transform monsterFlipRoot;
 
     [SerializeField]
@@ -71,6 +76,7 @@ public class MilkMonster : MonoBehaviour
         head = GetComponentInChildren<MilkMonsterHead>();
         anim = GetComponentInChildren<Animator>();
         harvest = GetComponentInChildren<HarvestSpot>();
+        speaker = GetComponent<AudioSource>();
 
         harvest.MayHarvest = false;
         head.FacingWest = rushingWest;
@@ -104,6 +110,8 @@ public class MilkMonster : MonoBehaviour
         {
             yield return new WaitForSeconds(0.02f);
         }
+
+        speaker.PlayOneShot(moo);
 
         anim.SetTrigger("Attack");
         yield return new WaitForSeconds(HeadTiltWait);

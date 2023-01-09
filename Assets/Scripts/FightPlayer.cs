@@ -3,7 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FightPlayer : MonoBehaviour
-{
+{    
+    AudioSource speaker;
+
+    [SerializeField]
+    AudioClip[] hurtSounds;
+
+    [SerializeField]
+    AudioClip[] deathSounds;
+
     Rigidbody rb;
     Vector3 startScale;
 
@@ -18,6 +26,7 @@ public class FightPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         splatter = GetComponentInChildren<ParticleSystem>();
         health = GameProgression.instance.YoungestMembersHealt;
+        speaker = GetComponent<AudioSource>();
     }
 
     [SerializeField]
@@ -308,9 +317,12 @@ public class FightPlayer : MonoBehaviour
             progress.SetYoungestMemberHealth(0);
             progress.NewDeath = true;
 
+
+            speaker.PlayOneShot(deathSounds[Random.Range(0, deathSounds.Length)]);
             transform.Rotate(new Vector3(0, 0, 90));
         } else
         {
+            speaker.PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Length)]);
             StartCoroutine(ReenableColliders(force, longDisable));
         }
     }    

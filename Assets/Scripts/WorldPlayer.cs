@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WorldPlayer : MonoBehaviour
 {
+
+    AudioSource speaker;
+
     [SerializeField]
     PlaceTransition home;
 
@@ -33,6 +36,7 @@ public class WorldPlayer : MonoBehaviour
 
     private void Start()
     {
+        speaker = GetComponent<AudioSource>();
         var progression = GameProgression.instance;
         Debug.Log($"Phase {progression.Phase}");
         target = ResolveTarget(progression.Phase);
@@ -40,10 +44,22 @@ public class WorldPlayer : MonoBehaviour
         StartCoroutine(WaitWalk());
     }
 
-    IEnumerator<WaitForSeconds> WaitWalk() {
+    IEnumerator<WaitForSeconds> WaitWalk()
+    {
         transform.position = home.transform.position;
         yield return new WaitForSeconds(waitBeforeWalk);
         home.WalkTo(transform, target);
     }
 
+    private void Update()
+    {
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0)
+        {
+            if (!speaker.isPlaying) speaker.Play();
+        }
+        else
+        {
+            if (speaker.isPlaying) speaker.Stop();
+        }
+    }
 }
