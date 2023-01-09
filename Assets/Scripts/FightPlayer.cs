@@ -10,10 +10,13 @@ public class FightPlayer : MonoBehaviour
     bool alive = true;
     bool disablePlayer = false;
 
+    ParticleSystem splatter;
+
     private void Start()
     {
         startScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
+        splatter = GetComponentInChildren<ParticleSystem>();
     }
 
     [SerializeField]
@@ -273,17 +276,21 @@ public class FightPlayer : MonoBehaviour
         health = Mathf.Clamp01(health - damage);
         Debug.Log($"Took {damage} / health {health} / Force {force}");
 
+        splatter.Play();
+
         if (health <= 0) {
             IgnoreMonsterColllisions(false);
             alive = false;
             var progress = GameProgression.instance;
             progress.SetYoungestMemberHealth(0);
             progress.NewDeath = true;
+
+            transform.Rotate(new Vector3(0, 0, 90));
         } else
         {
             StartCoroutine(ReenableColliders(force));
         }
-    }
+    }    
 
     IEnumerator<WaitForSeconds> ReenableColliders(Vector3 force)
     {
