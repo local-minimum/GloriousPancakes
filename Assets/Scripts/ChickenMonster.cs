@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ChickenMonster : MonoBehaviour
 {
+
+    ParticleSystem duster;
+
     enum ChickenPhases { Tracking, LayEgg, ReclaimEgg };
     ChickenMonsterHead[] heads;
 
@@ -41,6 +44,7 @@ public class ChickenMonster : MonoBehaviour
         heads = GetComponentsInChildren<ChickenMonsterHead>();
         anim = GetComponentInChildren<Animator>();
         player = FindObjectOfType<FightPlayer>();
+        duster = GetComponentInChildren<ParticleSystem>();
 
         egg.gameObject.SetActive(false);
 
@@ -149,7 +153,11 @@ public class ChickenMonster : MonoBehaviour
         anim.SetTrigger("Pick");
         phase = ChickenPhases.LayEgg;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
+
+        duster.Play();
+
+        yield return new WaitForSeconds(0.6f);
 
         Vector3 pos = egg.transform.position;
         pos.x = AverageHeadX + EggXOffset;
@@ -177,7 +185,11 @@ public class ChickenMonster : MonoBehaviour
         SetHeadPecking(true);
         anim.SetTrigger("Pick");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.4f);
+
+        duster.Play();
+
+        yield return new WaitForSeconds(0.6f);
 
         egg.gameObject.SetActive(false);
 
