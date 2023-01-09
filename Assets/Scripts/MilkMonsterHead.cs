@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MilkMonsterHead : MonoBehaviour
 {
+    ParticleSystem duster;
+
     [SerializeField]
     float tossAmount = 5f;
 
@@ -24,14 +26,17 @@ public class MilkMonsterHead : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<FightPlayer>();
+        duster = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {        
-        if (collision.transform == player.transform) { 
+        if (collision.transform == player.transform) {
+            duster.Play();
+
             if (Attacking)
             {
-                player.Hurt(Vector3.up * tossAmount, tossHurt);
+                player.Hurt(Vector3.up * tossAmount, tossHurt, false);
             } else
             {
                 player.Hurt((FacingWest ? -1 : 1) * Vector3.right * pushAmount + Vector3.up * pushAmount, pushHurt);

@@ -26,6 +26,7 @@ public class BushMonsterTop : MonoBehaviour
             return Random.Range(0, 2) == 0 ? -1 : 1;
         }
     }
+
     private void OnCollisionStay(Collision collision)
     {
         if (Attacking && collision.transform == player.transform)

@@ -263,7 +263,7 @@ public class FightPlayer : MonoBehaviour
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Monster"), ignore);
     }
 
-    public void Hurt(Vector3 force, float damage)
+    public void Hurt(Vector3 force, float damage, bool longDisable = true)
     {
         if (disablePlayer) return;
 
@@ -288,11 +288,11 @@ public class FightPlayer : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, 90));
         } else
         {
-            StartCoroutine(ReenableColliders(force));
+            StartCoroutine(ReenableColliders(force, longDisable));
         }
     }    
 
-    IEnumerator<WaitForSeconds> ReenableColliders(Vector3 force)
+    IEnumerator<WaitForSeconds> ReenableColliders(Vector3 force, bool longDisable)
     {
         for (float t = 0; t<0.5f; t+=0.02f)
         {
@@ -301,7 +301,10 @@ public class FightPlayer : MonoBehaviour
             force *= 0.5f;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        if (longDisable)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
         IgnoreMonsterColllisions(false);
         disablePlayer = false;
