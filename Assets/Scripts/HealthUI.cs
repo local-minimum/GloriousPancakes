@@ -16,6 +16,7 @@ public class HealthUI : MonoBehaviour
     {
         player = FindObjectOfType<FightPlayer>();
         health = GetComponentInChildren<Image>();
+        previousHealth = GameProgression.instance.YoungestMembersHealt;
         health.fillAmount = previousHealth;
     }
 

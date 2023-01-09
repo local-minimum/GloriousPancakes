@@ -43,6 +43,7 @@ public class Narrator : MonoBehaviour
     bool MakeStory()
     {
         if (currentSpeaker != null) currentSpeaker.Silence();
+        storyBox.Hide();
 
         if (storyIndex >= storyBeats.Length) return false;
 

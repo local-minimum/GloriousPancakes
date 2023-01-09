@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17292449, g: 0.21610859, b: 0.29807785, a: 1}
+  m_IndirectSpecularColor: {r: 0.18274337, g: 0.2258025, b: 0.2916789, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,6 +259,8 @@ Transform:
   - {fileID: 1601329319}
   - {fileID: 276165403}
   - {fileID: 1258071129}
+  - {fileID: 219420415}
+  - {fileID: 1069111838}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -363,6 +365,81 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &219420414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219420415}
+  - component: {fileID: 219420416}
+  m_Layer: 0
+  m_Name: FeastNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219420415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219420414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 50320357}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &219420416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219420414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phase: 5
+  storyBox: {fileID: 887818391}
+  storyBeats:
+  - name: Glory
+    delayBefore: 2
+    speaker: 
+    message: They feasted hartily on the glorious stack of pancakes
+  - name: Ate
+    delayBefore: 1
+    speaker: 
+    message: They ate, and ate some more
+  - name: Until
+    delayBefore: 1
+    speaker: 
+    message: Until everyone was full and happy
+  - name: Survivors
+    delayBefore: 0.5
+    speaker: 
+    message: At least everyone that survived the harvest
+  - name: End
+    delayBefore: 0.5
+    speaker: 
+    message: THE END
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+  triggersNextPhase: 0
 --- !u!1 &276165401
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +952,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.73657566, y: 0.029468838, z: -0.032159597, w: 0.67494714}
+  m_LocalRotation: {x: 0.1837341, y: 0.0035959692, z: -0.043639503, w: 0.98200023}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1128,7 +1205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &887818387
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1631,6 +1708,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipProbability: 0.8
+--- !u!1 &1069111837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069111838}
+  - component: {fileID: 1069111839}
+  m_Layer: 0
+  m_Name: MeagerFeastNarrator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1069111838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069111837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 50320357}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069111839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069111837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea7f08b2bc28fa45b0658587fd6013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phase: 6
+  storyBox: {fileID: 887818391}
+  storyBeats:
+  - name: Gather
+    delayBefore: 2
+    speaker: 
+    message: The whole family gathered around the pancakes
+  - name: Glorious
+    delayBefore: 0.5
+    speaker: 
+    message: They were glorious
+  - name: Few
+    delayBefore: 1
+    speaker: 
+    message: But the stack seemed rather small with everyone surviving
+  - name: Ate
+    delayBefore: 1
+    speaker: Carol
+    message: Everyone gets at least one I hope
+  - name: Better years
+    delayBefore: 1
+    speaker: 
+    message: Other years had been more fortunate
+  - name: Better years
+    delayBefore: 0.5
+    speaker: 
+    message: THE END
+  housePeople:
+  - {fileID: 958406344}
+  - {fileID: 1975507222}
+  - {fileID: 859036782}
+  - {fileID: 1675966048}
+  - {fileID: 1513488164}
+  - {fileID: 1103163740}
+  triggersNextPhase: 0
 --- !u!1 &1103163735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,104 +2123,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324956810}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1417123729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1417123733}
-  - component: {fileID: 1417123732}
-  - component: {fileID: 1417123731}
-  - component: {fileID: 1417123730}
-  m_Layer: 0
-  m_Name: Table
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &1417123730
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417123729}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1417123731
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417123729}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: bf2b67fde8b2ea34bb94a4f8ce3598ad, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1417123732
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417123729}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1417123733
+--- !u!4 &1417123733 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+  m_PrefabInstance: {fileID: 2016961199811094168}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417123729}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.021000028, y: -0.081499815, z: -0.42600012}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 704483214}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441034473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,6 +2467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980252a4d8a0458499a645ca6c5ec114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carol: {fileID: 1513488159}
   NextCarol:
   - name: No one left
     delayBefore: 0.5
@@ -2421,6 +2485,10 @@ MonoBehaviour:
     delayBefore: 0
     speaker: Carol
     message: No point risking my own life
+  - name: End
+    delayBefore: 2
+    speaker: 
+    message: THE END
   NextAlex:
   - name: Me
     delayBefore: 0.4
@@ -2472,7 +2540,7 @@ MonoBehaviour:
   - name: You know
     delayBefore: 0
     speaker: Kim
-    message: You know wher Jane is.
+    message: You know where Jane is.
   - name: Why
     delayBefore: 0
     speaker: Sam
@@ -3233,6 +3301,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a06ac9c0699a814182a7c901ae7897c, type: 3}
+--- !u!1001 &2016961199811094168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 704483214}
+    m_Modifications:
+    - target: {fileID: 2016961199065526537, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_Name
+      value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.021000028
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.42600012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016961199065526541, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3ea724fbbb303045a8afde25672cd50, type: 3}
 --- !u!1001 &7812059021091569714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3290,7 +3415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812059022427202781, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}
       propertyPath: debugPhase
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7750bb7f56aaf6449911375a85b1a07, type: 3}

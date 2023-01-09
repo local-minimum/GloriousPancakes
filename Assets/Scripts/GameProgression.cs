@@ -6,11 +6,11 @@ public class GameProgression : MonoBehaviour
 {
     public static GameProgression instance { get; private set; }
     
-    public enum GamePhase { Intro, FirstWheat, Milk, Eggs, Berries };
+    public enum GamePhase { Intro, FirstWheat, Milk, Eggs, Berries, EndingFeast, EndingMeagerFeast, EndingAlone };
     public enum FamilyMember { Jane, Sam, Lucinda, Kim, Alex, Carol, NONE };
 
     [SerializeField]
-    GamePhase debugPhase;
+    public GamePhase debugPhase;
 
     GamePhase phase = GamePhase.Intro;
     public GamePhase Phase { get { return phase; } }
@@ -47,6 +47,15 @@ public class GameProgression : MonoBehaviour
             case GamePhase.Eggs:
                 phase = GamePhase.Berries;
                 break;
+            case GamePhase.Berries:
+                if (YoungestAlive() == FamilyMember.Jane)
+                {
+                    phase = GamePhase.EndingMeagerFeast;
+                } else
+                {
+                    phase = GamePhase.EndingFeast;
+                }
+                break;
             default:
                 Debug.LogWarning($"No known phase after {phase}");
                 break;
@@ -64,6 +73,14 @@ public class GameProgression : MonoBehaviour
         familyHealth[FamilyMember.Lucinda] = 1;
         familyHealth[FamilyMember.Sam] = 1;
         Debug.Log("Game reset");
+    }
+
+    public float YoungestMembersHealt
+    {
+        get
+        {
+            return familyHealth[YoungestAlive()];
+        }
     }
 
     public float Health(FamilyMember member)
@@ -125,7 +142,7 @@ public class GameProgression : MonoBehaviour
         if (familyHealth[FamilyMember.Lucinda] > 0) return FamilyMember.Lucinda;
         if (familyHealth[FamilyMember.Kim] > 0) return FamilyMember.Kim;
         if (familyHealth[FamilyMember.Alex] > 0) return FamilyMember.Alex;
-        if (familyHealth[FamilyMember.Carol] > 0) return FamilyMember.Carol;
+        if (familyHealth[FamilyMember.Carol] > 0) return FamilyMember.Carol;        
         return FamilyMember.NONE;
     }
 

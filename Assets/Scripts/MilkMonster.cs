@@ -120,6 +120,7 @@ public class MilkMonster : MonoBehaviour
 
         transform.position = to;
         anim.SetTrigger("Crash");
+        head.Dizzy = true;
         head.Attacking = false;
         
         if (!harvest.MayHarvest)
@@ -133,6 +134,7 @@ public class MilkMonster : MonoBehaviour
         rushingWest = !rushingWest;
         sequencing = false; 
         head.FacingWest = rushingWest;
+        head.Dizzy = false;
     }
 
     private void Update()

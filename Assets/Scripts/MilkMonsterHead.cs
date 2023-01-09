@@ -23,6 +23,8 @@ public class MilkMonsterHead : MonoBehaviour
     public bool Attacking { get; set; }
     public bool FacingWest { get; set; }
 
+    public bool Dizzy { get; set; }
+
     private void Start()
     {
         player = FindObjectOfType<FightPlayer>();
@@ -39,7 +41,7 @@ public class MilkMonsterHead : MonoBehaviour
                 player.Hurt(Vector3.up * tossAmount, tossHurt, false);
             } else
             {
-                player.Hurt((FacingWest ? -1 : 1) * Vector3.right * pushAmount + Vector3.up * pushAmount, pushHurt);
+                player.Hurt((FacingWest != Dizzy ? -1 : 1) * Vector3.right * pushAmount + Vector3.up * pushAmount, pushHurt);
             }
         }
     }

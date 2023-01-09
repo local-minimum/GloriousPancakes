@@ -17,6 +17,7 @@ public class FightPlayer : MonoBehaviour
         startScale = transform.localScale;
         rb = GetComponent<Rigidbody>();
         splatter = GetComponentInChildren<ParticleSystem>();
+        health = GameProgression.instance.YoungestMembersHealt;
     }
 
     [SerializeField]

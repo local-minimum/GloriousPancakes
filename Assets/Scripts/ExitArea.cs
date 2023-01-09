@@ -42,7 +42,7 @@ public class ExitArea : MonoBehaviour
             Hint.SetProgress(progress);
 
             if (progress == 1)
-            {
+            {                
                 var progression = GameProgression.instance;
                 progression.NextPhase();
                 progression.SetYoungestMemberHealth(player.Health);
