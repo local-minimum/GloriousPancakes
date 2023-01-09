@@ -6,3 +6,5 @@ a couple of family members in the process... but who cares as long as the
 pancakes are made.
 
 And besides, it's just more pancakes each for the survivors!
+
+You can find the game at https://local_minimum.itch.io/glorious-pancakes
